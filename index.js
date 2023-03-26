@@ -15,7 +15,10 @@ app.use(express.json());
 app.use(cors());
 
 connectDB();
-
+app.get("/",(req, resp) =>{
+    resp.send("api run")
+}
+);
 
 app.post("/register", async (req, resp) => {
     let user = new User(req.body);
